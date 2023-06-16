@@ -11,7 +11,7 @@ export function GetRandomFruit(active){
     const NEUTRAL_ODDS = [0,0,0.2,0.5,0.8,1,0.8,0.5,0.2,0,0]  //for neutral/hot/wet
     const FRUIT_ODDS = [[1,0,0,0],[.5,.4,.1,0],[.25,.5,.25,0],[1/6,1/3,1/3,1/6],[0.15,.25,.4,.2],[.05,.2,.45,.3]] //which rank
 
-    let weeds = active.weed
+    let weeds = Math.min(5,active.weed)
     let suns = active.sun
     let rains = active.rain
     let weatherIntensity = Math.floor(Math.min(5,(suns+ rains)/2))

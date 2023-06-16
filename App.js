@@ -19,12 +19,13 @@ const BASKET_WIDTH = 100;
 const FRUIT_HEIGHT = 30
 const FRUIT_WIDTH = 30;
 const BASKET_MARGIN = BASKET_HEIGHT/5;
+const BOTTOM_MARGIN = 50
 
 MAX_ITEMS = 12;
 const FRUIT_MAX_X = WINDOW_WIDTH-FRUIT_WIDTH;
 const MAX_TIME = 10000
 const MIN_TIME = 3000
-const TARGET_LINE = WINDOW_HEIGHT-BASKET_HEIGHT+BASKET_MARGIN;
+const TARGET_LINE = WINDOW_HEIGHT-BASKET_HEIGHT+BASKET_MARGIN-BOTTOM_MARGIN;
 const TIME_LIMIT = 60000
 let dummyItems = []
 for (let i=0;i<MAX_ITEMS;i++){
@@ -59,7 +60,7 @@ export default function App() {
   let fruitChecked = []
   let [score,setScore] = React.useState(0);
   let [highScore,setHighScore] = React.useState(0);
-  let [basketPos,setBasketPos] = React.useState({x:WINDOW_WIDTH/2-BASKET_WIDTH/2,y:WINDOW_HEIGHT-BASKET_HEIGHT})
+  let [basketPos,setBasketPos] = React.useState({x:WINDOW_WIDTH/2-BASKET_WIDTH/2,y:WINDOW_HEIGHT-BASKET_HEIGHT-BOTTOM_MARGIN})
   let [didCheck,setDidCheck] = React.useState(false)
   let [collected,setCollected] = React.useState(dummyCollected)
   let [missed,setMissed] = React.useState(dummyCollected)
